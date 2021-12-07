@@ -4,14 +4,20 @@ import { AiFillGithub, AiFillLinkedin } from 'react-icons/ai'
 import { FaTelegramPlane } from 'react-icons/fa'
 import { useTheme } from 'next-themes'
 import Image from 'next/image'
+import Modal from './Modal'
+import { useState } from 'react'
+import ContactForm from './ContactForm'
 
 const Sidebar = () => {
   const {theme, setTheme} = useTheme()
-  
+  const [open, setOpen] = useState<boolean>(false)
   const changeTheme = () =>{
     setTheme(theme==='light'? 'dark' :'light')
   }
 
+  const handleOpenModal=()=>{
+    setOpen(!open)
+  } 
   return (
     <div >
       <Image
@@ -54,14 +60,19 @@ const Sidebar = () => {
       </div>  
       <button 
       className='w-8/12 px-5 py-2 my-2 transition-all duration-500 rounded-full hover:shadow-md bg-gradient-to-r from-buttonBg1 to-buttonBg2'
-      onClick={()=>window.open('mailto:contacts@gmail.com')}
+      onClick={handleOpenModal}
       >
         Email me
       </button>
+    
       <button 
       className='w-8/12 px-5 py-2 my-2 transition-all duration-500 rounded-full hover:shadow-md bg-gradient-to-r from-buttonBg1 to-buttonBg2'
       onClick={changeTheme}>Light
       </button>
+      <Modal open={open} onOpen={handleOpenModal}>
+      <ContactForm onClose={handleOpenModal}/>
+      </Modal>
+       
     </div>             
 
   )

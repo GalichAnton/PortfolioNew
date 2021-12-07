@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unescaped-entities */
 import ServiceCard from "../components/ServiceCard"
 import { services } from "../data"
 import { motion } from "framer-motion";
