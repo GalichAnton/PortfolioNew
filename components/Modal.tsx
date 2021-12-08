@@ -9,7 +9,7 @@ const Modal: FunctionComponent<{
   return (
     <div
       onClick={() => onOpen()}
-      className={`transition-all duration-700 fixed top-0 left-0 flex items-center justify-center w-full h-full ${open ? 'opacity-1 pointer-events-auto' : 'opacity-0 pointer-events-none'} modal`}>
+      className={`z-20 transition-all duration-700 fixed top-0 left-0 flex items-center justify-center w-full h-full ${open ? 'opacity-1 pointer-events-auto' : 'opacity-0 pointer-events-none'} modal`}>
       <div className="absolute w-full h-full bg-gray-900 opacity-50 modal-overlay"></div>
       <div className="z-50 w-11/12 mx-auto overflow-y-auto bg-white rounded shadow-lg modal-container md:max-w-md" >
         <div className="absolute top-0 right-0 z-50 flex flex-col items-center mt-4 mr-4 text-sm text-white cursor-pointer modal-close">
