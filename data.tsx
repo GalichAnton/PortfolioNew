@@ -104,6 +104,17 @@ export const projects: IProject[] = [
     key_techs: ['React', 'Redux', 'Ant Design','Rapid API'],
   },
   {
+    id: 8,
+    name: "Table of users",
+    description:
+      "Test task on React and TypeScript (loaded data from back, pagination, filtrating, add user )",
+    image_path: "/img/6.png",
+    deployed_url: "",
+    github_url: "https://github.com/GalichAnton/TestTaskExample",
+    category: ["react"],
+    key_techs: ['React', 'TypeScript', 'Bootstrap'],
+  },
+  {
     id: 7,
     name: "Countries",
     image_path: "/img/2.png",
